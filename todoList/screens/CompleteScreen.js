@@ -19,11 +19,8 @@ const TodoItem = props => {
 }
 
 export default function CompleteScreen(props) {
-  const [todoList, setTodoList] = useState(TODOS);
-  const onDoneTodo = () => {
-    const newTodoList = todoList.filter(todo => todo.status === 'Done');
-    setTodoList(newTodoList);
-  };
+  const [todoList, setTodoList] = useState(TODOS.filter(todo => todo.status === 'Done'));
+  
   return (
     <ScrollView contentContainerStyle={styles.container}>
     
@@ -33,7 +30,6 @@ export default function CompleteScreen(props) {
         idx={idx}
         todo={todo}
         key={todo.body}
-        onDoneTodo={onDoneTodo}
       />
     );
   })}

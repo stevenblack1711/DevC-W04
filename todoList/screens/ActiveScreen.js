@@ -19,8 +19,7 @@ const TodoItem = props => {
 }
 
 export default function ActiveScreen(props) {
-  const [todoList, setTodoList] = useState(TODOS);
-  const todo = todoList.filter(todo => todo.status === 'Done');
+  const [todoList, setTodoList] = useState(TODOS.filter(todo => todo.status === 'Active'));
   return (
     <ScrollView contentContainerStyle={styles.container}>
     
